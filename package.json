@@ -1,0 +1,30 @@
+{
+  "name": "dig3-pairprojet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pokemon.js",
+  "scripts": {
+    "test": "mocha --reporter nyan"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-config-problems": "^5.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "mocha": "^8.2.1",
+    "prettier": "^2.1.2",
+    "pretty-quick": "^3.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aki-iwanaga/dig3-pairprojet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aki-iwanaga/dig3-pairprojet/issues"
+  },
+  "homepage": "https://github.com/aki-iwanaga/dig3-pairprojet#readme"
+}
