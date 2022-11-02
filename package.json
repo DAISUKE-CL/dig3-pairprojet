@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/aki-iwanaga/dig3-pairprojet/issues"
   },
-  "homepage": "https://github.com/aki-iwanaga/dig3-pairprojet#readme"
+  "homepage": "https://github.com/aki-iwanaga/dig3-pairprojet#readme",
+  "dependencies": {
+    "node-fetch": "^1.7.3"
+  }
 }
