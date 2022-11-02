@@ -8,9 +8,7 @@ test.findNames(10)
 //   })
 
 pokemon_select_left.addEventListener("click", () => {
-  const selectedPokemonLeft = pokemon_left.value;
-  console.log(selectedPokemonLeft);
-  
+  const selectedPokemonLeft = pokemon_left.value;  
   test.findPokemonInformation(selectedPokemonLeft)
   .then((res) => {
     test.inputPokemonInformation(res);

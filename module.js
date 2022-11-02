@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+// const fetch = require("node-fetch");
 
 class pokemon {
   constructor() {
@@ -32,17 +32,35 @@ class pokemon {
   findPokemonInformation(name){
     return fetch("https://pokeapi.co/api/v2/pokemon/" + name)
       .then((data) => data.json())
-      .then((data) => data.sprites.front_default)
+      .then((data) => [
+        data.sprites.other["official-artwork"].front_default,
+        data.stats[0]["base_stat"],
+        data.moves.map(val => val.move.name)
+          .filter((move, i) => i < 4)
+      ])
       .catch(() => "error");
   }
 
-  inputPokemonInformation(url){
+  inputPokemonInformation(arr){
     const selectedPokemonEl = document.getElementById("selected_pokemon_left");
     selectedPokemonEl.innerHTML = "";
+    
     const imageEl = document.createElement("img");
-    imageEl.src = url;
+    imageEl.src = arr[0];
     imageEl.alt = "選択したポケモンの画像"
+    
+    const hpEl = document.createElement("p");
+    hpEl.innerText = arr[1]
     selectedPokemonEl.append(imageEl)
+    selectedPokemonEl.append(hpEl)
+
+    for (let i = 0; i < arr[2].length; i ++) {
+      const buttonEl = document.createElement("button");
+      buttonEl.name = "move_button_" + i;
+      buttonEl.id = "move_button_" + i;
+      buttonEl.innerText = arr[2][i];
+      selectedPokemonEl.append(buttonEl);
+    }
   }
 }
 

@@ -19,7 +19,14 @@ describe("トライ", () => {
   it("findPokemonInformationが指定したポケモンの画像URLのプロミスを返す", () => {
     const promise = test.findPokemonInformation("bulbasaur");
     const next = promise.then((actual) => {
-      expect(actual).to.equal("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png")
+      expect(actual[0]).to.equal("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png")
+    })
+    return next;
+  });
+  it("findPokemonInformationが指定したポケモンのHPのプロミスを返す", () => {
+    const promise = test.findPokemonInformation("bulbasaur");
+    const next = promise.then((actual) => {
+      expect(actual[1]).to.equal(45)
     })
     return next;
   });
