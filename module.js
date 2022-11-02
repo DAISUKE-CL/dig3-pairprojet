@@ -41,8 +41,8 @@ class pokemon {
       .catch(() => "error");
   }
 
-  inputPokemonInformation(arr){
-    const selectedPokemonEl = document.getElementById("selected_pokemon_left");
+  inputPokemonInformation(arr, leftOrRight){
+    const selectedPokemonEl = document.getElementById("selected_pokemon_" + leftOrRight);
     selectedPokemonEl.innerHTML = "";
     
     const imageEl = document.createElement("img");
@@ -50,7 +50,9 @@ class pokemon {
     imageEl.alt = "選択したポケモンの画像"
     
     const hpEl = document.createElement("p");
-    hpEl.innerText = arr[1]
+    hpEl.class = "hp"
+    hpEl.name = "hp"
+    hpEl.innerText = "HP: " + arr[1]
     selectedPokemonEl.append(imageEl)
     selectedPokemonEl.append(hpEl)
 
@@ -59,8 +61,20 @@ class pokemon {
       buttonEl.name = "move_button_" + i;
       buttonEl.id = "move_button_" + i;
       buttonEl.innerText = arr[2][i];
+      buttonEl.setAttribute("onclick", "test.attack()");
       selectedPokemonEl.append(buttonEl);
     }
+  }
+
+  attack(){
+   const hpEl = document.getElementsByTagName("p");
+   let hp = hpEl[0].innerText.slice(3);
+   hp = Number(hp) - Math.ceil(20 * Math.random());
+   if (hp > 0) {
+    hpEl[0].innerText = "HP: " + hp.toString();
+   } else {
+    hpEl[0].innerText = "倒された！"
+   }
   }
 }
 

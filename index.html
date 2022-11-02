@@ -7,9 +7,10 @@
   <body>
     <h1>ポケモン対戦ゲーム</h1>
     <main>
-      <main_left>
+      <main_left class="main">
         <input
           name="pokemon_left"
+          class="pokemon"
           id="pokemon_left"
           list="pokemon_list"
         >
@@ -21,9 +22,21 @@
 
         </div>
       </main_left>
-      <main_rigth> </main_rigth>
+      <main_rigth class="main"> 
+        <input
+          name="pokemon_right"
+          class="pokemon"
+          id="pokemon_right"
+          list="pokemon_list"
+        >
+        <button name="pokemon_select_right" id="pokemon_select_right">選択</button>
+        <div id="selected_pokemon_right">
+
+        </div>
+      </main_rigth>
     </main>
     <!-- <img src="https://cdn.dribbble.com/users/1281272/screenshots/4515441/unicorn.gif" /> -->
+    <link rel="stylesheet" href="style.css" />
     <script src="./module.js"></script>
     <script src="./pokemon.js"></script>
     <!-- <script src="./test/test.js"></script> -->

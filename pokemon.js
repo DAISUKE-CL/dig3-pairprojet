@@ -11,6 +11,20 @@ pokemon_select_left.addEventListener("click", () => {
   const selectedPokemonLeft = pokemon_left.value;  
   test.findPokemonInformation(selectedPokemonLeft)
   .then((res) => {
-    test.inputPokemonInformation(res);
+    test.inputPokemonInformation(res, "left");
   })
 })
+
+pokemon_select_right.addEventListener("click", () => {
+  const selectedPokemonRight = pokemon_right.value;  
+  test.findPokemonInformation(selectedPokemonRight)
+  .then((res) => {
+    test.inputPokemonInformation(res, "right");
+  })
+})
+
+// move_button_0.addEventListener("click", () => {
+//   console.log("aaa");
+  
+// })
+

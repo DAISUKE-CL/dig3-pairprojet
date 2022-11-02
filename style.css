@@ -1,0 +1,23 @@
+
+
+main {
+    display: flex;
+    justify-content: space-around;
+}
+.main {
+    width:40%;
+}
+
+.pokemon {
+   width: 40%; 
+   line-height: 1.5;
+   font-size:xx-large;
+}
+
+button {
+    font-size: xx-large;
+}
+
+p {
+    font-size: xx-large;
+}
