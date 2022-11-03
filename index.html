@@ -5,7 +5,8 @@
     <title>DIG3 pair project</title>
   </head>
   <body>
-    <h1>ポケモン対戦ゲーム</h1>
+    <h1>ポケモン バトルスタジアム</h1>
+    <button class="mute_btn" onClick="test.mute()">BGM ON/OFF</button>
     <main>
       <main_left class="main">
         <input
@@ -15,7 +16,6 @@
           list="pokemon_list"
         >
         <datalist id="pokemon_list">
-          <option value="梅◯永世名人" label="梅◯永世名人"></option>
         </datalist>
         <button name="pokemon_select_left" id="pokemon_select_left">選択</button>
         <div id="selected_pokemon_left">
@@ -35,10 +35,26 @@
         </div>
       </main_rigth>
     </main>
-    <!-- <img src="https://cdn.dribbble.com/users/1281272/screenshots/4515441/unicorn.gif" /> -->
+    <audio id="attack_audio_0">
+      <source src="./audio/小パンチ.mp3" type="audio/mp3">
+    </audio>
+    <audio id="attack_audio_1">
+      <source src="./audio/剣で斬る3.mp3" type="audio/mp3">
+    </audio>
+    <audio id="attack_audio_2">
+      <source src="./audio/気弾1.mp3" type="audio/mp3">
+    </audio>
+    <audio id="attack_audio_3">
+      <source src="./audio/爆発1.mp3" type="audio/mp3">
+    </audio>
+    <audio id="down_audio">
+      <source src="./audio/倒れる.mp3" type="audio/mp3">
+    </audio>
+    <audio id="bgm_audio">
+      <source src="./audio/bgm.mp3" type="audio/mp3">
+    </audio>
     <link rel="stylesheet" href="style.css" />
     <script src="./module.js"></script>
     <script src="./pokemon.js"></script>
-    <!-- <script src="./test/test.js"></script> -->
   </body>
 </html>

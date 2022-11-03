@@ -1,5 +1,5 @@
 const test = new pokemon();
-test.findNames(10)
+test.findNames(20)
   .then(data => test.makeList(data))
 
 // test.findPokemonInformation("bulbasaur")
@@ -21,6 +21,7 @@ pokemon_select_right.addEventListener("click", () => {
   .then((res) => {
     test.inputPokemonInformation(res, "right");
   })
+  document.getElementById('bgm_audio').play();
 })
 
 // move_button_0.addEventListener("click", () => {

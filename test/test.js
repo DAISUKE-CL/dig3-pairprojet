@@ -6,9 +6,7 @@ describe("トライ", () => {
   beforeEach(() => {
     test = new pokemon();
   })
-  it("addTwoが動く", () => {
-    expect(test.addTwo(3)).to.equal(5);
-  });
+
   it("findNamesがポケモンの名前が入った配列のプロミスを返す", () => {
     const promise = test.findNames(2);
     const next = promise.then((actual) => {
@@ -16,6 +14,7 @@ describe("トライ", () => {
     })
     return next;
   });
+
   it("findPokemonInformationが指定したポケモンの画像URLのプロミスを返す", () => {
     const promise = test.findPokemonInformation("bulbasaur");
     const next = promise.then((actual) => {
@@ -23,6 +22,7 @@ describe("トライ", () => {
     })
     return next;
   });
+  
   it("findPokemonInformationが指定したポケモンのHPのプロミスを返す", () => {
     const promise = test.findPokemonInformation("bulbasaur");
     const next = promise.then((actual) => {
