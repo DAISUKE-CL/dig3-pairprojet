@@ -5,54 +5,82 @@
     <title>DIG3 pair project</title>
   </head>
   <body>
-    <h1>ポケモン バトルスタジアム</h1>
-    <button class="mute_btn" onClick="test.mute()">BGM ON/OFF</button>
+    <header>
+      <h1>ポケモン バトルスタジアム</h1>
+    </header>
+    <div class="mute_button">
+      <h2>戦わせるポケモンを選んでください</h2>
+      <button
+        class="nes-btn is-disabled"
+        id="mute_button"
+        onClick="test.mute()"
+      >
+        BGM ON/OFF
+      </button>
+    </div>
     <main>
       <main_left class="main">
-        <input
-          name="pokemon_left"
-          class="pokemon"
-          id="pokemon_left"
-          list="pokemon_list"
-        >
-        <datalist id="pokemon_list">
-        </datalist>
-        <button name="pokemon_select_left" id="pokemon_select_left">選択</button>
-        <div id="selected_pokemon_left">
-
+        <h3>プレイヤー１</h3>
+        <div class="select">
+          <input
+            name="pokemon_left"
+            class="nes-btn is-nomal"
+            id="pokemon_left"
+            list="pokemon_list"
+          />
+          <datalist id="pokemon_list"> </datalist>
+          <button
+            name="pokemon_select_left"
+            class="nes-btn is-nomal"
+            id="pokemon_select_left"
+          >
+            選択
+          </button>
         </div>
+        <div id="selected_pokemon_left"></div>
       </main_left>
-      <main_rigth class="main"> 
-        <input
-          name="pokemon_right"
-          class="pokemon"
-          id="pokemon_right"
-          list="pokemon_list"
-        >
-        <button name="pokemon_select_right" id="pokemon_select_right">選択</button>
-        <div id="selected_pokemon_right">
-
+      <main_rigth class="main">
+        <h3>プレイヤー２</h3>
+        <div class="select">
+          <input
+            name="pokemon_right"
+            class="nes-btn is-nomal"
+            id="pokemon_right"
+            list="pokemon_list"
+          />
+          <button
+            name="pokemon_select_right"
+            class="nes-btn is-nomal"
+            id="pokemon_select_right"
+          >
+            選択
+          </button>
         </div>
+        <div id="selected_pokemon_right"></div>
       </main_rigth>
     </main>
     <audio id="attack_audio_0">
-      <source src="./audio/小パンチ.mp3" type="audio/mp3">
+      <source src="./audio/小パンチ.mp3" type="audio/mp3" />
     </audio>
     <audio id="attack_audio_1">
-      <source src="./audio/剣で斬る3.mp3" type="audio/mp3">
+      <source src="./audio/剣で斬る3.mp3" type="audio/mp3" />
     </audio>
     <audio id="attack_audio_2">
-      <source src="./audio/気弾1.mp3" type="audio/mp3">
+      <source src="./audio/気弾1.mp3" type="audio/mp3" />
     </audio>
     <audio id="attack_audio_3">
-      <source src="./audio/爆発1.mp3" type="audio/mp3">
+      <source src="./audio/爆発1.mp3" type="audio/mp3" />
     </audio>
     <audio id="down_audio">
-      <source src="./audio/倒れる.mp3" type="audio/mp3">
+      <source src="./audio/倒れる.mp3" type="audio/mp3" />
     </audio>
     <audio id="bgm_audio">
-      <source src="./audio/bgm.mp3" type="audio/mp3">
+      <source src="./audio/bgm.mp3" type="audio/mp3" />
     </audio>
+    <link
+      href="https://unpkg.com/nes.css@2.2.0/css/nes.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="./module.js"></script>
     <script src="./pokemon.js"></script>

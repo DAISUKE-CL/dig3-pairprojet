@@ -58,19 +58,23 @@ class pokemon {
     selectedPokemonEl.append(turnMessageEl);
 
     const hpEl = document.createElement("p");
-    hpEl.class = "hp";
+    hpEl.className = "hp";
     hpEl.name = "hp";
     hpEl.innerText = "HP: " + arr[1];
 
     selectedPokemonEl.append(hpEl);
 
-    const buttonUpperEl = document.createElement("div")
-    const buttonMiddleEl = document.createElement("div")
-    const buttonBottomEl = document.createElement("div")
+    const buttonUpperEl = document.createElement("div");
+    const buttonMiddleEl = document.createElement("div");
+    const buttonBottomEl = document.createElement("div");
+    
+    buttonUpperEl.className = "button_upper";
+    buttonMiddleEl.className = "button_middle";
+    buttonBottomEl.className = "button_bottom";
 
-    selectedPokemonEl.append(buttonUpperEl)
-    selectedPokemonEl.append(buttonMiddleEl)
-    selectedPokemonEl.append(buttonBottomEl)
+    selectedPokemonEl.append(buttonUpperEl);
+    selectedPokemonEl.append(buttonMiddleEl);
+    selectedPokemonEl.append(buttonBottomEl);
 
     for (let i = 0; i < arr[2].length; i++) {
       const buttonEl = document.createElement("button");
@@ -79,11 +83,17 @@ class pokemon {
       buttonEl.innerText = arr[2][i];
       buttonEl.setAttribute("onclick", `test.attack("${leftOrRight}", ${i})`);
       if (i === 0) {
+        buttonEl.className = "nes-btn is-primary";
         buttonUpperEl.append(buttonEl);
-      } else if (i === 3) {
-        buttonBottomEl.append(buttonEl);
+      } else if (i === 1) {
+        buttonEl.className = "nes-btn is-success";
+        buttonMiddleEl.append(buttonEl);
+      } else if (i === 2) {
+        buttonEl.className = "nes-btn is-error";
+        buttonMiddleEl.append(buttonEl);
       } else {
-        buttonMiddleEl.append(buttonEl)
+        buttonEl.className = "nes-btn is-warning";
+        buttonBottomEl.append(buttonEl);
       }
     }
   }
@@ -118,6 +128,9 @@ class pokemon {
       hpEl.innerText = "倒された！";
       myTurnMessageEl.innerText = "あなたの勝ちです！";
       yourTurnMessageEl.innerText = "あなたの負けです";
+
+      const hTwo = document.getElementsByTagName("h2");
+      hTwo[0].innerText = "決着！！次のポケモンを選んでください"
     }
   }
 
